@@ -1,5 +1,6 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,6 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import pageobjects.LandingPage;
 
 import java.time.Duration;
 import java.util.List;
@@ -19,6 +21,7 @@ public class firstTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
         driver.get("https://rahulshettyacademy.com/client");
+        LandingPage landingPage = new LandingPage(driver);
         driver.findElement(By.cssSelector("#userEmail")).sendKeys("patryk@gmail.com");
         driver.findElement(By.cssSelector("#userPassword")).sendKeys("Patryk1@3");
         driver.findElement(By.cssSelector("#login")).click();
@@ -41,7 +44,7 @@ public class firstTest {
         driver.findElement(By.cssSelector(".totalRow button")).click();
 
         Actions a = new Actions(driver);
-        a.sendKeys(driver.findElement(By.cssSelector("[placeholder*='Select']")), "Poland").build().perform();
+        a.sendKeys(driver.findElement(By.cssSelector("[placeholder*='Select']")), "Poland").keyDown(Keys.ENTER).build().perform();
 
         driver.findElement(By.cssSelector(".btnn.action__submit.ng-star-inserted")).click();
 
