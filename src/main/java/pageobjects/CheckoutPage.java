@@ -4,7 +4,6 @@ import abstractcomponents.AbstractComponents;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -17,14 +16,23 @@ public class CheckoutPage extends AbstractComponents {
         PageFactory.initElements(driver, this);
     }
     @FindBy(css = "[placeholder*='Select']")
-    WebElement countryName;
+    WebElement country;
 
     @FindBy(css = ".btnn.action__submit.ng-star-inserted")
             WebElement confirmationButton;
+    @FindBy(xpath = "//button[contains(@class,'ta-item')][1]")
+    WebElement selectCountryButton;
 
-    public void typeCountryName(String country)
+    public void selectCountry(String nameOfCountry) throws InterruptedException {
+        country.sendKeys(nameOfCountry);
+        selectCountryButton.click();
+        Thread.sleep(2000);
+    }
+    public ConfirmationPage submitOrder()
     {
-        countryName.sendKeys(country);
         confirmationButton.click();
+        ConfirmationPage confirmationPage = new ConfirmationPage(driver);
+        return confirmationPage;
+
     }
 }

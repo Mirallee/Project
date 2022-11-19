@@ -7,10 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import pageobjects.CartPage;
-import pageobjects.CheckoutPage;
-import pageobjects.LandingPage;
-import pageobjects.ProductCatalogue;
+import pageobjects.*;
 
 import java.time.Duration;
 import java.util.List;
@@ -24,8 +21,8 @@ public class SubmitOrderTest {
         driver.manage().window().maximize();
         LandingPage landingPage = new LandingPage(driver);
         landingPage.goTo();
-
         ProductCatalogue productCatalogue = landingPage.loginApplication("patryk@gmail.com", "Patryk1@3");
+
         List<WebElement> products = productCatalogue.getProductList();
         productCatalogue.addProductToCart(productName);
         CartPage cartPage = productCatalogue.goToCartPage();
@@ -34,14 +31,12 @@ public class SubmitOrderTest {
         Assert.assertTrue(match);
         CheckoutPage checkoutPage = cartPage.goToCheckout();
         
-        checkoutPage.typeCountryName("Poland");
-        /*
-
-        String confirmMessage = driver.findElement(By.cssSelector(".hero-primary")).getText();
+        checkoutPage.selectCountry("Poland");
+        ConfirmationPage confirmationPage = checkoutPage.submitOrder();
+        
+        String confirmMessage = confirmationPage.getTheMessage();
         Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
-        driver.close();*/
-
-
+        driver.close();
 
 
     }
