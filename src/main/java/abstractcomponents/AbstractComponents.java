@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobjects.CartPage;
+import pageobjects.OrderPage;
 
 import java.time.Duration;
 
@@ -20,6 +21,8 @@ WebDriver driver;
     }
     @FindBy(css = "[routerlink*='cart']")
     WebElement cartButton;
+    @FindBy(css = "[routerlink*='myorders']")
+    WebElement ordersButton;
     public void waitForElementToAppear(By findBy)
     {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -38,5 +41,12 @@ WebDriver driver;
     }
     public void waitForElementToDisappear(WebElement elem) throws InterruptedException {
         Thread.sleep(2000);
+    }
+    public OrderPage goToOrdersPage()
+    {
+        ordersButton.click();
+        OrderPage orderPage = new OrderPage(driver);
+        return orderPage;
+
     }
 }

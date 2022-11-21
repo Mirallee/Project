@@ -10,7 +10,7 @@ import pageobjects.ProductCatalogue;
 import java.util.List;
 
 public class Validations extends BaseTest {
-    @Test
+    @Test (groups = {"Errors"})
     public void loginErrorValidation()
     {
         landingPage.loginApplication("patryk@gmail.com", "Patryk123");
