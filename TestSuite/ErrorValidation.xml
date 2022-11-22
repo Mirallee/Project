@@ -5,9 +5,9 @@
         <listener class-name="TestComponents.Listeners"/>
     </listeners>
 
-    <test thread-count="5" name="Submit Order Test">
+    <test thread-count="5" name="Error Validations Test">
         <classes>
-            <class name="Tests.SubmitOrderTest"/>
+            <class name="Tests.Validations"/>
         </classes>
     </test>
 </suite>
