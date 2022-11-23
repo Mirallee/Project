@@ -9,13 +9,69 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">All Test Suite</th></tr>
-<tr><td><a href="#t0">Submit Order Test</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">73 355</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Submit Order Test</a></td><td class="num">0</td><td class="num attn">3</td><td class="num">0</td><td class="num">0</td><td class="num">38 733</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">All Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Submit Order Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">Tests.SubmitOrderTest</td><td><a href="#m0">orderHistoryTest</a></td><td rowspan="2">1669144151445</td><td rowspan="2">1319</td></tr><tr class="passedeven"><td><a href="#m1">orderHistoryTest</a></td></tr><tr class="passedeven"><td><a href="#m2">submitOrder</a></td><td rowspan="2">1669144123835</td><td rowspan="2">8434</td></tr><tr class="passedeven"><td><a href="#m3">submitOrder</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">All Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Submit Order Test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="4">Tests.SubmitOrderTest</td><td><a href="#m0">launchApplication</a></td><td rowspan="2">1669147835189</td><td rowspan="2">25538</td></tr><tr class="failedeven"><td><a href="#m1">launchApplication</a></td></tr><tr class="failedeven"><td><a href="#m2">tearDown</a></td><td rowspan="2">1669147873503</td><td rowspan="2">1</td></tr><tr class="failedeven"><td><a href="#m3">tearDown</a></td></tr><tr><th colspan="4">Submit Order Test &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="3">Tests.SubmitOrderTest</td><td><a href="#m4">orderHistoryTest</a></td><td rowspan="1">1669147873518</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m5">submitOrder</a></td><td rowspan="2">1669147860737</td><td rowspan="2">0</td></tr><tr class="skippedeven"><td><a href="#m6">submitOrder</a></td></tr></tbody>
 </table>
-<h2>Submit Order Test</h2><h3 id="m0">Tests.SubmitOrderTest#orderHistoryTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=Patryk1@3, product=ADIDAS ORIGINAL, email=patryk@gmail.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">Tests.SubmitOrderTest#orderHistoryTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=Iamking@000, product=ZARA COAT 3, email=shetty@gmail.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">Tests.SubmitOrderTest#submitOrder</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=Patryk1@3, product=ADIDAS ORIGINAL, email=patryk@gmail.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">Tests.SubmitOrderTest#submitOrder</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=Iamking@000, product=ZARA COAT 3, email=shetty@gmail.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Submit Order Test</h2><h3 id="m0">Tests.SubmitOrderTest#launchApplication</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.manage()&quot; because &quot;this.driver&quot; is null
+	at TestComponents.BaseTest.initializeDriver(BaseTest.java:48)
+	at TestComponents.BaseTest.launchApplication(BaseTest.java:71)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">Tests.SubmitOrderTest#launchApplication</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.manage()&quot; because &quot;this.driver&quot; is null
+	at TestComponents.BaseTest.initializeDriver(BaseTest.java:48)
+	at TestComponents.BaseTest.launchApplication(BaseTest.java:71)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">Tests.SubmitOrderTest#tearDown</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.close()&quot; because &quot;this.driver&quot; is null
+	at TestComponents.BaseTest.tearDown(BaseTest.java:78)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+... Removed 20 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">Tests.SubmitOrderTest#tearDown</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.close()&quot; because &quot;this.driver&quot; is null
+	at TestComponents.BaseTest.tearDown(BaseTest.java:78)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+... Removed 20 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">Tests.SubmitOrderTest#orderHistoryTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method Tests.SubmitOrderTest.orderHistoryTest() on instance Tests.SubmitOrderTest@35841320 depends on not successfully finished methods 
+[Tests.SubmitOrderTest.submitOrder() on instance Tests.SubmitOrderTest@35841320]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+... Removed 8 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">Tests.SubmitOrderTest#submitOrder</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=Patryk1@3, product=ADIDAS ORIGINAL, email=patryk@gmail.com}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.manage()&quot; because &quot;this.driver&quot; is null
+	at TestComponents.BaseTest.initializeDriver(BaseTest.java:48)
+	at TestComponents.BaseTest.launchApplication(BaseTest.java:71)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">Tests.SubmitOrderTest#submitOrder</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=Iamking@000, product=ZARA COAT 3, email=shetty@gmail.com}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.manage()&quot; because &quot;this.driver&quot; is null
+	at TestComponents.BaseTest.initializeDriver(BaseTest.java:48)
+	at TestComponents.BaseTest.launchApplication(BaseTest.java:71)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
