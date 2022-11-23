@@ -16,11 +16,12 @@ public class OrderPage extends AbstractComponents {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(css = "tr td:nth-child(3)")
     List<WebElement> productNames;
-    public boolean verifyOrderDisplay(String productName)
-    {
-        boolean match = productNames.stream().anyMatch(cartProduct->
+
+    public boolean verifyOrderDisplay(String productName) {
+        boolean match = productNames.stream().anyMatch(cartProduct ->
                 cartProduct.getText().equalsIgnoreCase(productName));
         return match;
     }

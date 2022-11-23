@@ -15,6 +15,7 @@ public class Listeners extends BaseTest implements ITestListener {
     ExtentTest test;
     ExtentReports extent = ExtentReporterNG.getReportObject();
     ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
+
     @Override
     public void onTestSuccess(ITestResult result) {
         extentTest.get().log(Status.PASS, "Test Passed");
@@ -38,9 +39,9 @@ public class Listeners extends BaseTest implements ITestListener {
         }
 
 
-        String filePath= null;
+        String filePath = null;
         try {
-            filePath = getScreenshot(result.getMethod().getMethodName(),driver);
+            filePath = getScreenshot(result.getMethod().getMethodName(), driver);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -50,7 +51,7 @@ public class Listeners extends BaseTest implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-       test = extent.createTest(result.getMethod().getMethodName());
-       extentTest.set(test); //unikalne id testu
+        test = extent.createTest(result.getMethod().getMethodName());
+        extentTest.set(test); //unikalne id testu
     }
 }

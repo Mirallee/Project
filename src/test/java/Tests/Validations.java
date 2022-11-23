@@ -11,12 +11,12 @@ import pageobjects.ProductCatalogue;
 import java.util.List;
 
 public class Validations extends BaseTest {
-    @Test (groups = {"Errors"},retryAnalyzer = Retry.class)
-    public void loginErrorValidation()
-    {
+    @Test(groups = {"Errors"}, retryAnalyzer = Retry.class)
+    public void loginErrorValidation() {
         landingPage.loginApplication("patryk@gmail.com", "Patryk123");
         Assert.assertEquals("Incorrect email password.", landingPage.getErrorMessage());
     }
+
     @Test
     public void productErrorValidation() throws InterruptedException {
         String productName = "ADIDAS ORIGINAL";

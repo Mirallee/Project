@@ -15,11 +15,12 @@ public class CheckoutPage extends AbstractComponents {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(css = "[placeholder*='Select']")
     WebElement country;
 
     @FindBy(css = ".btnn.action__submit.ng-star-inserted")
-            WebElement confirmationButton;
+    WebElement confirmationButton;
     @FindBy(xpath = "//button[contains(@class,'ta-item')][1]")
     WebElement selectCountryButton;
 
@@ -28,8 +29,8 @@ public class CheckoutPage extends AbstractComponents {
         selectCountryButton.click();
         Thread.sleep(2000);
     }
-    public ConfirmationPage submitOrder()
-    {
+
+    public ConfirmationPage submitOrder() {
         confirmationButton.click();
         ConfirmationPage confirmationPage = new ConfirmationPage(driver);
         return confirmationPage;

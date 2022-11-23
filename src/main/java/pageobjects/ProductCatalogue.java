@@ -27,18 +27,17 @@ public class ProductCatalogue extends AbstractComponents {
     By toastMessage = By.cssSelector("#toast-container");
 
 
-
-    public List<WebElement> getProductList()
-    {
+    public List<WebElement> getProductList() {
         waitForElementToAppear(productsBy);
         return products;
     }
-    public WebElement getProductByName(String productName)
-    {
+
+    public WebElement getProductByName(String productName) {
         WebElement prod = products.stream().filter(product ->
                 product.findElement(By.cssSelector("b")).getText().equals(productName)).findFirst().orElse(null);
         return prod;
     }
+
     public void addProductToCart(String productName) throws InterruptedException {
         WebElement prod = getProductByName(productName);
         prod.findElement(addToCart).click();

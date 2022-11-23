@@ -27,7 +27,7 @@ public class firstTest {
         driver.findElement(By.cssSelector("#userEmail")).sendKeys("patryk@gmail.com");
         driver.findElement(By.cssSelector("#userPassword")).sendKeys("Patryk1@3");
         driver.findElement(By.cssSelector("#login")).click();
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".offset-sm-1")));
 
         List<WebElement> products = driver.findElements(By.cssSelector(".offset-sm-1"));
@@ -40,8 +40,8 @@ public class firstTest {
         driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
 
         List<WebElement> cartPage = driver.findElements(By.cssSelector(".cartSection h3"));
-        boolean match = cartPage.stream().anyMatch(cartProduct->
-                        cartProduct.getText().equalsIgnoreCase(productName));
+        boolean match = cartPage.stream().anyMatch(cartProduct ->
+                cartProduct.getText().equalsIgnoreCase(productName));
         Assert.assertTrue(match);
         driver.findElement(By.cssSelector(".totalRow button")).click();
 
@@ -53,8 +53,6 @@ public class firstTest {
         String confirmMessage = driver.findElement(By.cssSelector(".hero-primary")).getText();
         Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
         driver.close();
-
-
 
 
     }

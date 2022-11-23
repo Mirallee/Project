@@ -14,36 +14,39 @@ import java.time.Duration;
 
 public class AbstractComponents {
 
-WebDriver driver;
+    WebDriver driver;
+
     public AbstractComponents(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(css = "[routerlink*='cart']")
     WebElement cartButton;
     @FindBy(css = "[routerlink*='myorders']")
     WebElement ordersButton;
-    public void waitForElementToAppear(By findBy)
-    {
+
+    public void waitForElementToAppear(By findBy) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
     }
-    public void waitForWebElementToAppear(WebElement findBy)
-    {
+
+    public void waitForWebElementToAppear(WebElement findBy) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(findBy));
     }
-    public CartPage goToCartPage()
-    {
+
+    public CartPage goToCartPage() {
         cartButton.click();
         CartPage cartPage = new CartPage(driver);
         return cartPage;
     }
+
     public void waitForElementToDisappear(WebElement elem) throws InterruptedException {
         Thread.sleep(2000);
     }
-    public OrderPage goToOrdersPage()
-    {
+
+    public OrderPage goToOrdersPage() {
         ordersButton.click();
         OrderPage orderPage = new OrderPage(driver);
         return orderPage;

@@ -16,23 +16,24 @@ public class CartPage extends AbstractComponents {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(css = ".cartSection h3")
-            List<WebElement> productTitles;
+    List<WebElement> productTitles;
     @FindBy(css = ".totalRow button")
-            WebElement checkoutEle;
-    public boolean verifyProductDisplay(String productName)
-    {
-        boolean match = productTitles.stream().anyMatch(cartProduct->
+    WebElement checkoutEle;
+
+    public boolean verifyProductDisplay(String productName) {
+        boolean match = productTitles.stream().anyMatch(cartProduct ->
                 cartProduct.getText().equalsIgnoreCase(productName));
         return match;
     }
-    public CheckoutPage goToCheckout()
-    {
+
+    public CheckoutPage goToCheckout() {
         checkoutEle.click();
         CheckoutPage checkoutPage = new CheckoutPage(driver);
         return checkoutPage;
     }
-    }
+}
 
 
 

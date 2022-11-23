@@ -1,12 +1,12 @@
 [
   {
-    "email" : "patryk@gmail.com",
-    "password" : "Patryk1@3",
-    "product" : "ADIDAS ORIGINAL"
+    "email": "patryk@gmail.com",
+    "password": "Patryk1@3",
+    "product": "ADIDAS ORIGINAL"
   },
   {
-    "email" : "shetty@gmail.com",
-    "password" : "Iamking@000",
-    "product" : "ZARA COAT 3"
+    "email": "shetty@gmail.com",
+    "password": "Iamking@000",
+    "product": "ZARA COAT 3"
   }
 ]

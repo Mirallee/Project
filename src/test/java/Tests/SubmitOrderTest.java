@@ -17,7 +17,7 @@ import java.util.List;
 
 public class SubmitOrderTest extends BaseTest {
 
-    @Test(dataProvider="getData",groups={"Purchase"})
+    @Test(dataProvider = "getData", groups = {"Purchase"})
     public void submitOrder(HashMap<String, String> input) throws InterruptedException {
 
         ProductCatalogue productCatalogue = landingPage.loginApplication(input.get("email"), input.get("password"));
@@ -37,7 +37,7 @@ public class SubmitOrderTest extends BaseTest {
         Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
     }
 
-    @Test(dependsOnMethods = {"submitOrder"},dataProvider = "getData",groups = {"Purchase"})
+    @Test(dependsOnMethods = {"submitOrder"}, dataProvider = "getData", groups = {"Purchase"})
     public void orderHistoryTest(HashMap<String, String> input) {
         ProductCatalogue productCatalogue = landingPage.loginApplication(input.get("email"), (input.get("password")));
         OrderPage orderPage = productCatalogue.goToOrdersPage();
@@ -56,8 +56,8 @@ public class SubmitOrderTest extends BaseTest {
         map1.put("password", "Iamking@000");
         map1.put("product", "ZARA COAT 3");*/
         List<HashMap<String, String>> data = getJsonDataToMap(System.getProperty("user.dir")
-                + "//src//test//java//data//PurchaseOrder.json" );
-        return new Object[][] {  {data.get(0)} , {data.get(1)  }};
+                + "//src//test//java//data//PurchaseOrder.json");
+        return new Object[][]{{data.get(0)}, {data.get(1)}};
     }
 
 
